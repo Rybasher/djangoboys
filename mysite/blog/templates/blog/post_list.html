@@ -5,33 +5,19 @@
     <title>Django boys blog</title>
 </head>
 <body>
+
     <div>
         <h1><a href="#">Django Boys Blog</a></h1>
     </div>
-    <div>
-        <p>published: 25.07.2019, 12:14</p>
-    </div>
-    <h2><a href="#">My first post</a></h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda autem commodi consectetur corporis
-        delectus dicta doloremque dolores eligendi in incidunt, laboriosam laudantium magnam
-        nobis odit pariatur quaerat, qui temporibus, voluptatibus.
-    </p>
-    <div>
-        <p>published: 25.07.2019, 12:14</p>
-    </div>
-    <h2><a href="#">My second post</a></h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda autem commodi consectetur corporis
-        delectus dicta doloremque dolores eligendi in incidunt, laboriosam laudantium magnam
-        nobis odit pariatur quaerat, qui temporibus, voluptatibus.
-    </p>
-    <div>
-        <p>published: 25.07.2019, 12:14</p>
-    </div>
-    <h2><a href="#">My third post</a></h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda autem commodi consectetur corporis
-        delectus dicta doloremque dolores eligendi in incidunt, laboriosam laudantium magnam
-        nobis odit pariatur quaerat, qui temporibus, voluptatibus.
-    </p>
+    {% for post in posts %}
+         <div>
+            <p>published:{{post.published_date}}</p>
+             <h1><a href="#">{{ post.title }}</a></h1>
+             <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+
+   
 
 </body>
 </html>
